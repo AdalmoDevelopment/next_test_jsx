@@ -2,14 +2,13 @@
 import React from "react";
 import ParticlesBackground from "./ParticlesBackground";
 
-
 const page = () => {
     return (
-        <div className=' content-center'>
+        <div className='w-full h-screen flex items-center justify-center'>
             <ParticlesBackground />
-            <div className='flex items-center justify-center  text-slate-200 w-full h-full md:px-10 px-5 '>
+            <div className='w-full h-full flex items-center justify-center md:px-10 px-5'>
                 {/* Content for the landing page */}
-                <p className="animate-fade-right animate-delay-300 animate-once">Escubi</p>
+                <p className="animate-fade-right animate-delay-300 animate-once text-center">Escubi</p>
             </div>
         </div>
     );
