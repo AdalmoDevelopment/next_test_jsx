@@ -2,8 +2,8 @@
 import React, { useEffect } from "react";
 import ParticlesBackground from "./ParticlesBackground";
 import Image from 'next/image'
-import NavBar from "./navbar";
-import TemplateTW from "./TemplateTW";
+// import NavBar from "./navbar";
+// import TemplateTW from "./templatetw";
 
 const Page = () => {
     // useEffect(()=>{
