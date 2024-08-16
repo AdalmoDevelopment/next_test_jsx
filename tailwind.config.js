@@ -17,6 +17,7 @@ module.exports = {
       },
       colors: {
         'baleatech-blue': '#0a72fa',
+        'baleatech-black': '171717'
       },
     },
   },

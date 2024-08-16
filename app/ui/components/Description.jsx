@@ -27,8 +27,8 @@ const ZigZagSection = ({ title, description, reverse, imgRoute }) => (
 
 const Description = () => {
   return (
-    <div className="md:w-4/6 mx-auto">
-      <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-[#07090f] antialiased">
+    <div className="z-10 md:w-4/6 mx-auto">
+      <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-[#0e0e0e] bg-opacity-75 antialiased">
         <div className="px-4 mx-auto max-w-screen-xl">
           <header className="mb-16">
             <h1 className="text-3xl font-extrabold leading-tight lg:text-4xl text-white">
@@ -55,9 +55,13 @@ const Description = () => {
               description="Somos expertos en la gestión y administración de bases de datos, simplificando al máximo la presentación final de la información."
             />
             <ZigZagSection
-              title="Todo en nuestras manos"
-              description="Nuestro equipo de expertos está aquí para guiarte en cada paso del proceso de desarrollo."
+              title="Aplicaciones móviles"
+              description="Crea aplicaciones móvil nativas que convergan con tu web, asegurando la centralización de tus datos"
               reverse
+            />
+            <ZigZagSection
+              title="Bases de datos"
+              description="Nuestro equipo de expertos está aquí para guiarte en cada paso del proceso de desarrollo."
             />
           </article>
         </div>
