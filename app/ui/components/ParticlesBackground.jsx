@@ -1,5 +1,4 @@
 // Particles.jsx
-import logo from '../public/FichaFlex_Adalmo2.png'
 import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
@@ -28,7 +27,7 @@ const ParticlesBackground = () => {
                     }
                   },
                   "color": {
-                    "value": "#0052cc"
+                    "value": "#0a72fa"
                   },
                   "shape": {
                     "type": "circle",
@@ -109,7 +108,7 @@ const ParticlesBackground = () => {
                     },
                     "bubble": {
                       "distance": 1011.0361293151757,
-                      "size": 40,
+                      "size": 50,
                       "duration": 2,
                       "opacity": 8,
                       "speed": 3
