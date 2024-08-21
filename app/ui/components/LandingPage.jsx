@@ -1,5 +1,5 @@
 import React from "react";
-import ParticlesBackground from "./ParticlesBackground";
+import ParticlesBackground from "./functions/ParticlesBackground";
 
 const LandingPage = () => {
     return (

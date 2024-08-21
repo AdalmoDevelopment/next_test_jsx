@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import ParticlesBackground from "./ParticlesBackground";
+import ParticlesBackground from "./functions/ParticlesBackground";
 import Image from 'next/image'
 
 const NavBar = () => {
