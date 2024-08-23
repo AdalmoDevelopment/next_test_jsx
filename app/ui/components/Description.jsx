@@ -11,14 +11,14 @@ const Description = () => {
             // ${reverse ? "animate-fade-right" : "animate-fade-left"}
       <div
         ref={ref}
-        className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""} my-8 transition-opacity  ease-in duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}
+        className={`flex flex-col h-96 md:flex-row ${reverse ? "md:flex-row-reverse" : ""} my-8 transition-opacity  ease-in duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}
       >
-        <div className="md:w-1/2 p-4">
+        <div className="md:w-1/2 p-4 content-center">
           <h2 className="text-2xl font-bold text-white">{title}</h2>
           <p className="mt-2 text-gray-300">{description}</p>
         </div>
         <div className="md:w-1/2 p-4 flex items-center justify-center">
-          <div className={`w-full ${!imgRoute ? "bg-gray-600" : ""} h-40 rounded-lg flex items-center justify-center hover:scale-125 ease-in-out transition delay-100`}>
+          <div className={`w-full ${imgRoute ? "bg-gray-600" : ""} h-full rounded-lg flex items-center justify-center hover:scale-125 ease-in-out transition delay-100`}>
             {imgRoute ? 
               <Image src={imgRoute}            
                 width={500}

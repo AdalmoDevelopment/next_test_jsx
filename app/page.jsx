@@ -21,14 +21,15 @@ const Page = () => {
     },[])
 
     return (
-        <div className='flex flex-col overflow-x-hidden items-center justify-center  '>
+        // bg-gradient-to-b from-transparent to-black
+        <div className='flex flex-col overflow-x-hidden items-center justify-center bg-gradient-to-b from-transparent to-[#0a0a0a] '>
             <ParticlesBackground/>
             <NavBar/> 
-            <div className="bg-gradient-to-b from-transparent to-black">
+            
                 <Hero/>
                 <Description/>
                 <FooterWithSitemap/>
-            </div>
+            
         </div>
     );
 };
