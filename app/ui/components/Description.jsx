@@ -27,7 +27,7 @@ const ZigZagSection = ({ title, description, reverse, imgRoute }) => (
 
 const Description = () => {
   return (
-    <div className="z-10 md:w-4/6 mx-auto">
+    <div className="z-10 md:w-/6 mx-auto">
       <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-[#0e0e0e] bg-opacity-75 antialiased">
         <div className="px-4 mx-auto max-w-screen-xl">
           <header className="mb-16">

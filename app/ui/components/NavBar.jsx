@@ -36,7 +36,7 @@ const NavBar = () => {
         <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
 
             <div className="hidden md:flex space-x-8">
-            <a href="#" className="text-[#0a72fa] hover:text-white">Home</a>
+            <a href="#" className="text-[#ffff] hover:text-white">Home</a>
             <a href="#" className="text-[#0a72fa] hover:text-white">Services</a>
             <a href="#" className="text-[#0a72fa] hover:text-white">Pricing</a>
             <a href="#" className="text-[#0a72fa] hover:text-white">Contact</a>
