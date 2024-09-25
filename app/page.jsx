@@ -1,9 +1,11 @@
 'use client'
 import React, { useEffect } from "react";
-import ParticlesBackground from "./ui/components/ParticlesBackground";
+import ParticlesBackground from "./ui/components/functions/ParticlesBackground";
 import Hero from "./ui/components/Hero";
 import NavBar from "./ui/components/NavBar";
  import Description from "./ui/components/Description";
+ import ContactForm from "./ui/components/ContactForm";
+ import { FooterWithSitemap } from "./ui/components/Footer";
 
 const Page = () => {
     useEffect(()=>{
@@ -20,11 +22,16 @@ const Page = () => {
     },[])
 
     return (
-        <div className='flex flex-col overflow-x-hidden items-center justify-center  '>
+        // bg-gradient-to-b from-transparent to-black
+        <div className='flex flex-col overflow-x-hidden items-center justify-center bg-gradient-to-b from-transparent to-[#0a0a0a] '>
             <ParticlesBackground/>
             <NavBar/> 
-            <Hero/>
-            <Description/>
+            
+                <Hero/>
+                <Description/>
+                <ContactForm/>
+                <FooterWithSitemap/>
+                
         </div>
     );
 };

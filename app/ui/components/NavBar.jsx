@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import ParticlesBackground from "./ParticlesBackground";
+import ParticlesBackground from "./functions/ParticlesBackground";
 import Image from 'next/image'
 
 const NavBar = () => {
@@ -36,10 +36,13 @@ const NavBar = () => {
         <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
 
             <div className="hidden md:flex space-x-8">
-            <a href="#" className="text-[#ffff] hover:text-white">Home</a>
-            <a href="#" className="text-[#0a72fa] hover:text-white">Services</a>
-            <a href="#" className="text-[#0a72fa] hover:text-white">Pricing</a>
-            <a href="#" className="text-[#0a72fa] hover:text-white">Contact</a>
+            <ul className="md:flex text-lg">
+            <a href="#home" className="nav-link text-[#ffff] hover:text-white mr-4">Home</a>
+            
+            <a href="#servicios" className="text-[#0a72fa] hover:text-white mr-4">Nuestros servicios</a>
+            <a href="#" className="text-[#0a72fa] hover:text-white mr-4">Pricing</a>
+            <a href="#contacto" className="text-[#0a72fa] hover:text-white">Contacto</a>
+            </ul>
             </div>
         </div>
     </div>

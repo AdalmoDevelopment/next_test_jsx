@@ -1,68 +1,93 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
+import { useIsVisible } from "./functions/FadeAnimationTW";
 
-const ZigZagSection = ({ title, description, reverse, imgRoute }) => (
-  <div className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""} my-8`}>
-    <div className="md:w-1/2 p-4">
-      <h2 className="text-2xl font-bold text-white">{title}</h2>
-      <p className="mt-2 text-gray-300">{description}</p>
-    </div>
-    <div className="md:w-1/2 p-4 flex items-center justify-center">
-      <div className="w-full bg-gray-600 h-40 rounded-lg flex items-center justify-center">
+const ZigZagSection = ({ title, description, reverse, imgRoute }) => {
+  const ref = useRef();
+  const isVisible = useIsVisible(ref);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
-        {imgRoute ? 
-          <Image src={imgRoute}            
-            width={600}
-            height={600}
-            alt="escubi"
-            className="rounded-lg"
-          />
-          :
-          <span className="text-gray-400">Imagen / Gráfico</span>
-        }
+  useEffect(() => {
+    if (isVisible && !hasBeenVisible) {
+      setHasBeenVisible(true); // Marca como visible cuando se muestra por primera vez
+    }
+  }, [isVisible, hasBeenVisible]);
+
+  return (
+    <div
+      ref={ref}
+      className={`flex flex-col h-96 md:flex-row ${reverse ? "md:flex-row-reverse" : ""}  transition-opacity ease-in duration-1000 
+      ${hasBeenVisible ? "opacity-100" : "opacity-0"} 
+      ${!hasBeenVisible && isVisible ? (reverse ? "animate-fade-right" : "animate-fade-left") : ""}`}
+    >
+      <div className="md:w-1/2 p-4 content-center">
+        <h2 className="text-5xl font-bold text-baleatech-blue">{title}</h2>
+        <p className="mt-2 text-xl text-gray-300">{description}</p>
+      </div>
+      <div className="md:w-1/2 p-4 flex items-center justify-center">
+        <div className={`w-full ${imgRoute ? "border border-gray-700" : ""} h-full rounded-lg flex items-center justify-center hover:scale-125 ease-in-out transition delay-100`}>
+          {imgRoute ? 
+            <Image src={imgRoute}            
+              width={500}
+              height={500}
+              alt="escubi"
+              className="rounded-lg"
+            />
+            :
+            <span className="text-gray-400">Imagen / Gráfico</span>
+          }
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Description = () => {
   return (
-    <div className="z-10 md:w-/6 mx-auto">
-      <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-[#0e0e0e] bg-opacity-75 antialiased">
+    <div id="servicios" className={`z-10 pt-24 md:w-5/6 mx-auto transition-opacity ease-in duration-1000`}>
+      <main className="  lg:pb-24 bg-[] bg-opacity-75 antialiased">
         <div className="px-4 mx-auto max-w-screen-xl">
           <header className="mb-16">
-            <h1 className="text-3xl font-extrabold leading-tight lg:text-4xl text-white">
-              Bienvenido a <span className="text-baleatech-blue">BaleaTech</span>
+            <h1  className="mt-5 text-6xl font-extrabold leading-tight lg:text-4xl text-white">
+              Bienvenido a <span className="text-5xl text-baleatech-blue">BaleaTech</span>
             </h1>
-            <p className="mt-4 text-gray-300">
-              Donde nace el compromiso tecnológico con las islas 
+            <p className="text-xl mt-4 text-gray-500 italic">
+              - Donde nace el compromiso tecnológico con las islas 
+            </p>
+            <p className="text-xl mt-10 text-gray-300">
+              Impulsamos la productividad y presencia de tu empresa con la solución Software que necesites, por eso te ofrecemos:
             </p>
           </header>
 
-          <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-invert">
+          <article className="mx-auto w-full format format-sm sm:format-base lg:format-lg format-invert">
             <ZigZagSection
-              title="Innovación Local"
-              description="Impulsamos el desarrollo tecnológico en Baleares mediante soluciones personalizadas y sostenibles."
+              title="Aplicaciones móviles"
+              description="Creamos aplicaciones móvil nativas que convergan con tu web, garantizando la centralización y flexibilidad de los datos de tu empresa"
+              imgRoute="/mobile-pc.png"
+              reverse
+            />
+            <ZigZagSection
+              title="Chatbot de IA adaptado"
+              description="Entrenamos e integramos modelos de Inteligencia Artificial con toda la información de tu empresa."
+              imgRoute="/FFlex-ScreenShoot.png"
             />
             <ZigZagSection
               title="Soluciones Web"
-              description="Hemos desarrollado sitios web y aplicaciones optimizadas y versátiles incluso a niveles ERP, adaptadas a las necesidades de nuestros clientes."
+              description="Desarrollamos aplicaciones web versátiles incluso a niveles ERP, adaptadas a las necesidades de nuestros clientes."
               reverse
               imgRoute="/FFlex-ScreenShoot.png"
             />
             <ZigZagSection
               title="Bases de datos"
               description="Somos expertos en la gestión y administración de bases de datos, simplificando al máximo la presentación final de la información."
+              imgRoute="/FFlex-ScreenShoot.png"
             />
-            <ZigZagSection
-              title="Aplicaciones móviles"
-              description="Crea aplicaciones móvil nativas que convergan con tu web, asegurando la centralización de tus datos"
-              reverse
-            />
-            <ZigZagSection
+
+            {/* <ZigZagSection
               title="Bases de datos"
               description="Nuestro equipo de expertos está aquí para guiarte en cada paso del proceso de desarrollo."
-            />
+              imgRoute="/FFlex-ScreenShoot.png"
+            /> */}
           </article>
         </div>
       </main>
